@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيادة ڤيرزاچ لزرع الأسنان | د. يوسف عمر زهرة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        clinic: {
+                            dark: '#063729',     /* أخضر زمردي عميق للثقة */
+                            primary: '#059669',  /* أخضر طبي أساسي */
+                            accent: '#10b981',   /* أخضر حيوي للأزرار */
+                            light: '#ecfdf5',    /* أخضر فاتح جداً للخلفيات */
+                            surface: '#f8fafc',  /* أبيض مائل للرمادي الهادئ */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- Header & Pill Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-clinic-primary text-white flex items-center justify-center text-lg shadow-sm">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg text-clinic-dark block leading-none">عيادة ڤيرزاچ</span>
+                    <span class="text-xs text-slate-500 font-medium">د. يوسف عمر زهرة</span>
+                </div>
+            </a>
+
+            <!-- Center Pill Menu (Desktop) -->
+            <nav class="hidden md:flex items-center bg-clinic-dark text-white px-6 py-2.5 rounded-full gap-7 text-sm font-medium shadow-sm">
+                <a href="#home" class="text-emerald-300 font-semibold">الرئيسية</a>
+                <a href="#services" class="hover:text-emerald-300 transition">الخدمات</a>
+                <a href="#doctor" class="hover:text-emerald-300 transition">عن الطبيب</a>
+                <a href="#faq" class="hover:text-emerald-300 transition">الأسئلة الشائعة</a>
+                <a href="#location" class="hover:text-emerald-300 transition">الموقع والدوام</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#booking" class="bg-clinic-accent hover:bg-clinic-primary text-white px-5 py-2.5 rounded-full text-sm font-bold transition shadow-sm flex items-center gap-2">
+                <span>حجز موعد</span>
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-12 pb-16 lg:pt-20 lg:pb-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Right Column: Editorial Copy -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-clinic-light text-clinic-primary text-xs font-bold border border-emerald-200">
+                    <span class="w-2 h-2 rounded-full bg-clinic-primary"></span>
+                    <span>دمشق – شارع الحمراء | اختصاص زرع وتجميل الأسنان</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-slate-900 leading-[1.2]">
+                    طريقك نحو ابتسامة صحية <br class="hidden sm:block">
+                    <span class="text-clinic-primary">وثقة تدوم مدى الحياة.</span>
+                </h1>
+
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    في عيادة ڤيرزاچ بإشراف الدكتور يوسف عمر زهرة، نعتمد أحدث بروتوكولات زراعة الأسنان الرقمية والعلاجات التجميلية الدقيقة في بيئة طبية معقمة ومريحة بالكامل.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#booking" class="bg-clinic-accent hover:bg-clinic-primary text-white px-7 py-3.5 rounded-full font-bold text-sm sm:text-base transition shadow-md shadow-emerald-600/15 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>احجز استشارتك عبر واتساب</span>
+                    </a>
+                    <a href="#services" class="px-7 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-700 border border-slate-200 hover:border-clinic-primary hover:text-clinic-primary transition">
+                        استعراض الخدمات
+                    </a>
+                </div>
+
+                <!-- Trust Badge Row -->
+                <div class="pt-4 flex items-center gap-6 text-sm text-slate-600 border-t border-slate-100">
+                    <div class="flex items-center gap-1.5 font-bold text-slate-900">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>تقييم 5.0</span>
+                        <span class="text-slate-400 font-normal">على خرائط جوجل</span>
+                    </div>
+                    <span class="text-slate-300">|</span>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-virus text-clinic-primary"></i>
+                        <span>تعقيم قياسي معتمد</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Column: Clean Clinic Visual Card -->
+            <div class="lg:col-span-5">
+                <div class="relative rounded-3xl overflow-hidden bg-clinic-light border border-emerald-100 p-3 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" 
+                         alt="عيادة ڤيرزاچ لزرع الأسنان في دمشق" 
+                         class="w-full h-[380px] object-cover rounded-2xl">
+                    
+                    <!-- Floating Status Card -->
+                    <div class="bg-white rounded-2xl p-4 shadow-md border border-slate-100 mt-3 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-clinic-light text-clinic-primary flex items-center justify-center text-lg">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500">أوقات الدوام اليومي (عدا الجمعة)</div>
+                                <div class="font-bold text-slate-900 text-sm">5:00 مساءً – 9:00 مساءً</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-clinic-primary text-xs font-bold">الحجز مسبقاً</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Green Stats Bar -->
+    <section class="px-4 -mt-4 mb-16">
+        <div class="max-w-7xl mx-auto bg-clinic-dark rounded-3xl p-8 sm:p-10 text-white shadow-xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
+                <div class="bg-clinic-accent rounded-2xl p-6 text-white shadow-md">
+                    <div class="text-xs uppercase tracking-wider font-bold opacity-90 mb-1">الخيار الأول للمرضى</div>
+                    <div class="text-2xl font-extrabold mb-2">زراعة رقمية</div>
+                    <p class="text-xs leading-relaxed opacity-95">تخطيط ثلاثي الأبعاد لضمان دقة وضع الغرسة وراحة المريض التامة.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">5.0 ★</div>
+                    <div class="font-bold text-sm mt-1">رضا المرضى</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">تقييمات ممتازة تعكس جودة الرعاية والمتابعة المستمرة.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">100%</div>
+                    <div class="font-bold text-sm mt-1">غرسات معتمدة</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">استخدام أجود أنظمة الزرع السويسرية والألمانية الموثوقة.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">+15</div>
+                    <div class="font-bold text-sm mt-1">تخصصاً وعلاجاً</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">من الزراعة الفورية إلى العدسات التجميلية وعلاج اللثة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Services Section -->
+    <section id="services" class="py-20 px-4 bg-clinic-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-clinic-primary font-bold text-sm">خدماتنا الطبية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">رعاية سنية متكاملة بمعايير حديثة</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-3">نقدم خطط علاجية مخصصة لكل مريض تجمع بين الوظيفة الصحية المثالية والمظهر الطبيعي الجذاب.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">زراعة الأسنان الفورية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">تعويض الأسنان المفقودة بجذور تيتانيوم عالية التوافق الحيوي مع إمكانية التركيب الفوري وفق تقييم الحالة.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز استشارة زراعة</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-regular fa-face-smile-beam"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">تجميل الأسنان والعدسات</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">تصميم الابتسامة الرقمي باستخدام قشور الإيماكس (E-max) وتيجان الزيركون فائق الشفافية بدون تحضير جائر.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز جلسة تجميل</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">تبييض وتنظيف الأسنان</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">إزالة التصبغات والجير بالموجات فوق الصوتية وتبييض آمن يحافظ على طبقة المينا ويمنح إشراقة فورية.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز موعد تنظيف</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">علاج الجذور والأعصاب</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">معالجة لبية دقيقة باستخدام أحدث الأجهزة الدوارة ومحددات الذروة الإلكترونية لإنقاذ السن الطبيعي.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز موعد علاج</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-teeth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">التعويضات الثابتة والمتحركة</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">جسور وتركيبات سنية مصممة رقمياً بدقة متناهية لاستعادة كفاءة المضغ والنطق الطبيعي.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>استفسر عن التركيبات</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">علاج اللثة والأنسجة الداعمة</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">تشخيص وعلاج التهابات اللثة وتراجعها وتهيئة الأنسجة الفموية لضمان نجاح الزرعات السنية.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز فحص لثة</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor & Clinic Philosophy -->
+    <section id="doctor" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="bg-clinic-light rounded-3xl p-6 border border-emerald-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-2xl bg-clinic-dark text-white flex items-center justify-center text-2xl font-bold">
+                                د.ي
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-slate-900">د. يوسف عمر زهرة</h3>
+                                <p class="text-clinic-primary text-sm font-semibold">طبيب وجراح أسنان — اختصاص زرع الأسنان</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            نحرص في عيادة ڤيرزاچ على تقديم رعاية طبية قائمة على الشفافية التشخيصية، حيث يتم شرح خطة العلاج والمراحل الزمنية والتكلفة بوضوح تام قبل البدء بأي إجراء.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div class="p-3 rounded-xl bg-clinic-surface text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-clinic-primary"></i>
+                                <span>تخدير موضعي غير مؤلم</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-clinic-surface text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-clinic-primary"></i>
+                                <span>متابعة دورية بعد الزرع</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div id="faq" class="lg:col-span-7 space-y-4">
+                <span class="text-clinic-primary font-bold text-sm">إجابات واضحة</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-6">الأسئلة الشائعة حول زراعة وعلاج الأسنان</h2>
+
+                <div class="faq-item active border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>هل عملية زراعة الأسنان مؤلمة؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">تتم الزراعة تحت التخدير الموضعي الحديث ولا يشعر المريض بأي ألم أثناء الإجراء، وغالباً ما يكون الانزعاج بعد الجلسة أخف من خلع السن العادي ويُسيطر عليه بمسكنات بسيطة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>كم تستغرق مدة التئام الزرعة وتركيب التاج النهائي؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">يتراوح الالتئام العظمي عادة بين 8 إلى 12 أسبوعاً حسب كثافة العظم ومكان الزرعة، وفي حالات مختارة يمكن تركيب تعويض مؤقت في نفس الجلسة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>كيف يمكنني حجز موعد في عيادة ڤيرزاچ؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">يُفضل الحجز المسبق عبر واتساب العيادة على الرقم 0988883221 لتحديد الوقت المناسب خلال ساعات الدوام (5:00 – 9:00 مساءً) دون انتظار.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking, Location & Interactive Google Map Section -->
+    <section id="booking" class="py-16 px-4 bg-clinic-surface">
+        <div class="max-w-7xl mx-auto bg-clinic-dark rounded-3xl overflow-hidden shadow-xl grid lg:grid-cols-12">
+            
+            <!-- Location, Hours & Interactive Map -->
+            <div id="location" class="lg:col-span-5 p-8 sm:p-10 text-white flex flex-col justify-between bg-gradient-to-br from-clinic-dark to-emerald-950">
+                <div class="space-y-5">
+                    <span class="inline-block px-3 py-1 rounded-full bg-emerald-800/70 text-emerald-200 text-xs font-bold">الموقع وساعات العمل</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">ابدأ رحلة العناية بابتسامتك اليوم</h2>
+
+                    <div class="space-y-3.5 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">العنوان</div>
+                                <div class="text-emerald-100/80">دمشق – شارع الحمراء، سوريا</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-regular fa-clock text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">ساعات العمل</div>
+                                <div class="text-emerald-100/80">السبت – الخميس: 5:00 مساءً – 9:00 مساءً (الجمعة عطلة)</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">واتساب وهاتف العيادة</div>
+                                <div class="text-emerald-100/80" dir="ltr">+963 988 883 221</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Maps Embed (Al Hamra St, Damascus) -->
+                    <div class="pt-2">
+                        <div class="rounded-2xl overflow-hidden border border-emerald-700/60 shadow-lg bg-emerald-900/40">
+                            <iframe 
+                                title="موقع عيادة ڤيرزاچ لزرع الأسنان - شارع الحمراء، دمشق"
+                                src="https://maps.google.com/maps?q=%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1%20%D8%AF%D9%85%D8%B4%D9%82%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D9%81%D9%8A%D8%B1%D8%B2%D8%A7%D8%AC&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                                class="w-full h-48 border-0" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=عيادة+ڤيرزاچ+لزرع+الأسنان+د.+يوسف+عمر+زهرة+دمشق" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300 hover:text-white transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span>فتح الموقع في تطبيق خرائط جوجل للملاحة</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-5 mt-5 border-t border-emerald-800/60 text-xs text-emerald-200/70">
+                    * يُنصح بالحجز المسبق لتفادي الانتظار وضمان تخصيص الوقت الكافي للفحص.
+                </div>
+            </div>
+
+            <!-- Clean White Booking Form -->
+            <div class="lg:col-span-7 p-8 sm:p-12 bg-white flex flex-col justify-center">
+                <h3 class="text-2xl font-extrabold text-slate-900 mb-2">نموذج حجز موعد</h3>
+                <p class="text-slate-500 text-sm mb-6">سيتم فتح محادثة واتساب جاهزة ببياناتك لإرسالها للعيادة بضغطة واحدة.</p>
+
+                <form id="clinicBookingForm" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكامل *</label>
+                            <input type="text" id="pName" required placeholder="مثال: سامر الخطيب" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الخدمة المطلوبة</label>
+                            <select id="pService" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm bg-white">
+                                <option value="زراعة الأسنان">زراعة الأسنان</option>
+                                <option value="تجميل الأسنان والعدسات">تجميل الأسنان والعدسات</option>
+                                <option value="فحص واستشارة عامة">فحص واستشارة عامة</option>
+                                <option value="علاج عصب / حشوات تجميلية">علاج عصب / حشوات تجميلية</option>
+                                <option value="تنظيف وتبييض الأسنان">تنظيف وتبييض الأسنان</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">اليوم والوقت المفضل (بين 5 و 9 مساءً)</label>
+                        <input type="text" id="pTime" placeholder="مثال: يوم الاثنين الساعة 6:30 مساءً" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="pNotes" rows="3" placeholder="اذكر أي استفسار أو حالة خاصة..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-clinic-accent hover:bg-clinic-primary text-white font-bold py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>إرسال طلب الحجز عبر واتساب</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-8 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <div class="font-bold text-slate-700">عيادة ڤيرزاچ لزرع الأسنان — د. يوسف عمر زهرة</div>
+            <div>دمشق – شارع الحمراء | جميع الحقوق محفوظة © 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        document.getElementById('clinicBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('pName').value.trim();
+            const service = document.getElementById('pService').value;
+            const time = document.getElementById('pTime').value.trim() || 'أقرب موعد متاح';
+            const notes = document.getElementById('pNotes').value.trim();
+
+            let text = `مرحباً دكتور يوسف، أرغب بحجز موعد في عيادة ڤيرزاچ:%0A`;
+            text += `• الاسم: ${name}%0A`;
+            text += `• الخدمة: ${service}%0A`;
+            text += `• الموعد المفضل: ${time}`;
+            if (notes) {
+                text += `%0A• ملاحظات: ${notes}`;
+            }
+
+            window.open(`https://wa.me/963988883221?text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
